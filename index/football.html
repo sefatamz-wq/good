@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Football Mat Foundation Exercise Videos</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0b0f14, #111827);
+      color: #e5e7eb;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: rgba(17,24,39,0.9);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .header-left {
+      font-size: 13px;
+      font-weight: bold;
+      color: #22d3ee;
+    }
+
+    .header-center {
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      flex: 1;
+      color: #ffffff;
+    }
+
+    .header-right img {
+      height: 36px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(34,211,238,0.25);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 16px;
+    }
+
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* VIDEO CARD */
+    .video-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      cursor: pointer;
+      transition: 0.4s ease;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ELIMINATION EFFECT (inactive cards) */
+    .video-card.dimmed {
+      opacity: 0.25;
+      transform: scale(0.98);
+      filter: blur(0.3px);
+    }
+
+    /* ACTIVE CARD */
+    .video-card.active {
+      opacity: 1 !important;
+      transform: scale(1.03);
+      box-shadow: 0 0 25px rgba(34,211,238,0.25);
+      border: 1px solid rgba(34,211,238,0.3);
+    }
+
+    .video-title {
+      padding: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #22d3ee;
+      background: rgba(0,0,0,0.4);
+    }
+
+    video {
+      width: 100%;
+      display: block;
+      background: black;
+    }
+
+    /* FULL SCREEN PLAYER */
+    .player-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .player-overlay video {
+      width: 95%;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(34,211,238,0.3);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">PRIMARY GOAL</div>
+    <div class="header-center">Football Training </div>
+    <div class="header-right">
+      <img src="Untitled design (2).png" alt="Logo" />
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+
+      <div class="video-card" onclick="openPlayer(this)">
+        <div class="video-title">Foundation Exercise 1</div>
+        <video src="01 Football mat foundation exercises1.1 - 2F22E Store (144p, h264).mp4"></video>
+      </div>
+
+      <div class="video-card" onclick="openPlayer(this)">
+        <div class="video-title">Foundation Exercise 2</div>
+        <video src="02 Football mat foundation exercises1.2 - 2F22E Store (144p, h264).mp4"></video>
+      </div>
+
+      <div class="video-card" onclick="openPlayer(this)">
+        <div class="video-title">Foundation Exercise 3</div>
+        <video src="03 Football mat foundation exercises1.3 - 2F22E Store (144p, h264).mp4"></video>
+      </div>
+
+      <div class="video-card" onclick="openPlayer(this)">
+        <div class="video-title">Foundation Exercise 4</div>
+        <video src="04 Football mat foundation exercises1.4 - 2F22E Store (144p, h264).mp4"></video>
+      </div>
+
+      <div class="video-card" onclick="openPlayer(this)">
+        <div class="video-title">Foundation Exercise 5</div>
+        <video src="05 Football mat Advanced Practice 2.1 - 2F22E Store (144p, h264).mp4"></video>
+      </div>
+
+      <div class="video-card" onclick="openPlayer(this)">
+        <div class="video-title">Foundation Exercise 6</div>
+        <video src="06 Football mat Advanced Practice 2.2 - 2F22E Store (144p, h264).mp4"></video>
+      </div>
+
+      <div class="video-card" onclick="openPlayer(this)">
+        <div class="video-title">Foundation Exercise 7</div>
+        <video src="07 Football mat Advanced Practice 2.3 - 2F22E Store (144p, h264).mp4"></video>
+      </div>
+
+      <div class="video-card" onclick="openPlayer(this)">
+        <div class="video-title">Foundation Exercise 8</div>
+        <video src="08 Football mat Advanced Practice 2.4 - 2F22E Store (144p, h264).mp4"></video>
+      </div>
+
+      <div class="video-card" onclick="openPlayer(this)">
+        <div class="video-title">Foundation Exercise 9</div>
+        <video src="09 Football mat Advanced skill practice 3.1 - 2F22E Store (144p, h264).mp4"></video>
+      </div>
+
+      <div class="video-card" onclick="openPlayer(this)">
+        <div class="video-title">Foundation Exercise 10</div>
+        <video src="10 Football mat Advanced skill practice 3.2 - 2F22E Store (144p, h264).mp4"></video>
+      </div>
+
+      <div class="video-card" onclick="openPlayer(this)">
+        <div class="video-title">Foundation Exercise 11</div>
+        <video src="11 Football mat Advanced skill practice 3.3 - 2F22E Store (144p, h264).mp4"></video>
+      </div>
+
+      <div class="video-card" onclick="openPlayer(this)">
+        <div class="video-title">Foundation Exercise 12</div>
+        <video src="12 Football mat Advanced skill practice 3.4 - 2F22E Store (144p, h264).mp4"></video>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FULL SCREEN PLAYER -->
+  <div class="player-overlay" id="player">
+    <button class="close-btn" onclick="closePlayer()">Close</button>
+    <video id="mainVideo" controls autoplay></video>
+  </div>
+
+  <script>
+    const player = document.getElementById('player');
+    const mainVideo = document.getElementById('mainVideo');
+    const cards = document.querySelectorAll('.video-card');
+
+    function openPlayer(card) {
+      const video = card.querySelector('video');
+
+      // reset all
+      cards.forEach(c => {
+        c.classList.remove('active');
+        c.classList.add('dimmed');
+      });
+
+      // set active
+      card.classList.remove('dimmed');
+      card.classList.add('active');
+
+      // play full screen
+      mainVideo.src = video.src;
+      player.style.display = 'flex';
+      mainVideo.play();
+    }
+
+    function closePlayer() {
+      mainVideo.pause();
+      player.style.display = 'none';
+      mainVideo.src = '';
+
+      // reset all
+      cards.forEach(c => {
+        c.classList.remove('dimmed');
+        c.classList.remove('active');
+      });
+    }
+  </script>
+
+</body>
+</html>
